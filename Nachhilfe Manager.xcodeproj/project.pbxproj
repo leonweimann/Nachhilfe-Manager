@@ -3,24 +3,37 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 56;
+	objectVersion = 70;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		AB3D8AB12C94DEFF00C55CAF /* SampleDataPreviewModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB3D8AB02C94DEFF00C55CAF /* SampleDataPreviewModifier.swift */; };
 		AB6A54502C8DE9B900B8E001 /* Nachhilfe_ManagerApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB6A544F2C8DE9B900B8E001 /* Nachhilfe_ManagerApp.swift */; };
 		AB6A54522C8DE9B900B8E001 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB6A54512C8DE9B900B8E001 /* ContentView.swift */; };
 		AB6A54542C8DE9BB00B8E001 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AB6A54532C8DE9BB00B8E001 /* Assets.xcassets */; };
 		AB6A54582C8DE9BB00B8E001 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AB6A54572C8DE9BB00B8E001 /* Preview Assets.xcassets */; };
+		AB8AEF2C2C8DF328008735EE /* CalManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB8AEF2B2C8DF328008735EE /* CalManager.swift */; };
+		AB8AEF2E2C8DF3CA008735EE /* AppViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB8AEF2D2C8DF3CA008735EE /* AppViewModel.swift */; };
+		AB8AEF332C8DF65D008735EE /* AppState.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB8AEF322C8DF65D008735EE /* AppState.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		AB3D8AB02C94DEFF00C55CAF /* SampleDataPreviewModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SampleDataPreviewModifier.swift; sourceTree = "<group>"; };
 		AB6A544C2C8DE9B900B8E001 /* Nachhilfe Manager.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Nachhilfe Manager.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		AB6A544F2C8DE9B900B8E001 /* Nachhilfe_ManagerApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Nachhilfe_ManagerApp.swift; sourceTree = "<group>"; };
 		AB6A54512C8DE9B900B8E001 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		AB6A54532C8DE9BB00B8E001 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		AB6A54552C8DE9BB00B8E001 /* Nachhilfe_Manager.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Nachhilfe_Manager.entitlements; sourceTree = "<group>"; };
 		AB6A54572C8DE9BB00B8E001 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		AB6A545E2C8DEAC600B8E001 /* Nachhilfe-Manager-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "Nachhilfe-Manager-Info.plist"; sourceTree = SOURCE_ROOT; };
+		AB8AEF2B2C8DF328008735EE /* CalManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalManager.swift; sourceTree = "<group>"; };
+		AB8AEF2D2C8DF3CA008735EE /* AppViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppViewModel.swift; sourceTree = "<group>"; };
+		AB8AEF322C8DF65D008735EE /* AppState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppState.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
+
+/* Begin PBXFileSystemSynchronizedRootGroup section */
+		AB3D8AAB2C94DBA500C55CAF /* Models */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = Models; sourceTree = "<group>"; };
+/* End PBXFileSystemSynchronizedRootGroup section */
 
 /* Begin PBXFrameworksBuildPhase section */
 		AB6A54492C8DE9B900B8E001 /* Frameworks */ = {
@@ -52,8 +65,13 @@
 		AB6A544E2C8DE9B900B8E001 /* Nachhilfe Manager */ = {
 			isa = PBXGroup;
 			children = (
+				AB6A545E2C8DEAC600B8E001 /* Nachhilfe-Manager-Info.plist */,
 				AB6A544F2C8DE9B900B8E001 /* Nachhilfe_ManagerApp.swift */,
-				AB6A54512C8DE9B900B8E001 /* ContentView.swift */,
+				AB8AEF282C8DF2DF008735EE /* Content */,
+				AB8AEF292C8DF2E2008735EE /* Support */,
+				AB8AEF312C8DF651008735EE /* Helpers */,
+				AB8AEF2A2C8DF2E7008735EE /* Manager */,
+				AB3D8AAB2C94DBA500C55CAF /* Models */,
 				AB6A54532C8DE9BB00B8E001 /* Assets.xcassets */,
 				AB6A54552C8DE9BB00B8E001 /* Nachhilfe_Manager.entitlements */,
 				AB6A54562C8DE9BB00B8E001 /* Preview Content */,
@@ -67,6 +85,39 @@
 				AB6A54572C8DE9BB00B8E001 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		AB8AEF282C8DF2DF008735EE /* Content */ = {
+			isa = PBXGroup;
+			children = (
+				AB6A54512C8DE9B900B8E001 /* ContentView.swift */,
+			);
+			path = Content;
+			sourceTree = "<group>";
+		};
+		AB8AEF292C8DF2E2008735EE /* Support */ = {
+			isa = PBXGroup;
+			children = (
+				AB8AEF2D2C8DF3CA008735EE /* AppViewModel.swift */,
+				AB3D8AB02C94DEFF00C55CAF /* SampleDataPreviewModifier.swift */,
+			);
+			path = Support;
+			sourceTree = "<group>";
+		};
+		AB8AEF2A2C8DF2E7008735EE /* Manager */ = {
+			isa = PBXGroup;
+			children = (
+				AB8AEF2B2C8DF328008735EE /* CalManager.swift */,
+			);
+			path = Manager;
+			sourceTree = "<group>";
+		};
+		AB8AEF312C8DF651008735EE /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				AB8AEF322C8DF65D008735EE /* AppState.swift */,
+			);
+			path = Helpers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -84,6 +135,9 @@
 			);
 			dependencies = (
 			);
+			fileSystemSynchronizedGroups = (
+				AB3D8AAB2C94DBA500C55CAF /* Models */,
+			);
 			name = "Nachhilfe Manager";
 			productName = "Nachhilfe Manager";
 			productReference = AB6A544C2C8DE9B900B8E001 /* Nachhilfe Manager.app */;
@@ -97,7 +151,7 @@
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
 				LastSwiftUpdateCheck = 1540;
-				LastUpgradeCheck = 1540;
+				LastUpgradeCheck = 1600;
 				TargetAttributes = {
 					AB6A544B2C8DE9B900B8E001 = {
 						CreatedOnToolsVersion = 15.4;
@@ -141,6 +195,10 @@
 			files = (
 				AB6A54522C8DE9B900B8E001 /* ContentView.swift in Sources */,
 				AB6A54502C8DE9B900B8E001 /* Nachhilfe_ManagerApp.swift in Sources */,
+				AB8AEF2E2C8DF3CA008735EE /* AppViewModel.swift in Sources */,
+				AB8AEF332C8DF65D008735EE /* AppState.swift in Sources */,
+				AB3D8AB12C94DEFF00C55CAF /* SampleDataPreviewModifier.swift in Sources */,
+				AB8AEF2C2C8DF328008735EE /* CalManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -181,6 +239,7 @@
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
+				DEAD_CODE_STRIPPING = YES;
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
@@ -242,6 +301,7 @@
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
+				DEAD_CODE_STRIPPING = YES;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
@@ -269,11 +329,14 @@
 				CODE_SIGN_ENTITLEMENTS = "Nachhilfe Manager/Nachhilfe_Manager.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEAD_CODE_STRIPPING = YES;
 				DEVELOPMENT_ASSET_PATHS = "\"Nachhilfe Manager/Preview Content\"";
 				DEVELOPMENT_TEAM = D385MXT68Z;
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "Nachhilfe-Manager-Info.plist";
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.business";
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphonesimulator*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphoneos*]" = YES;
@@ -284,17 +347,17 @@
 				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphonesimulator*]" = UIStatusBarStyleDefault;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 17.5;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.0;
 				LD_RUNPATH_SEARCH_PATHS = "@executable_path/Frameworks";
 				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = "@executable_path/../Frameworks";
-				MACOSX_DEPLOYMENT_TARGET = 14.5;
+				MACOSX_DEPLOYMENT_TARGET = 15.0;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.leonweimann.Nachhilfe-Manager";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = auto;
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
 				SWIFT_EMIT_LOC_STRINGS = YES;
-				SWIFT_VERSION = 5.0;
+				SWIFT_VERSION = 6.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -307,11 +370,14 @@
 				CODE_SIGN_ENTITLEMENTS = "Nachhilfe Manager/Nachhilfe_Manager.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEAD_CODE_STRIPPING = YES;
 				DEVELOPMENT_ASSET_PATHS = "\"Nachhilfe Manager/Preview Content\"";
 				DEVELOPMENT_TEAM = D385MXT68Z;
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "Nachhilfe-Manager-Info.plist";
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.business";
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphonesimulator*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphoneos*]" = YES;
@@ -322,17 +388,17 @@
 				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphonesimulator*]" = UIStatusBarStyleDefault;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 17.5;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.0;
 				LD_RUNPATH_SEARCH_PATHS = "@executable_path/Frameworks";
 				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = "@executable_path/../Frameworks";
-				MACOSX_DEPLOYMENT_TARGET = 14.5;
+				MACOSX_DEPLOYMENT_TARGET = 15.0;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.leonweimann.Nachhilfe-Manager";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = auto;
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
 				SWIFT_EMIT_LOC_STRINGS = YES;
-				SWIFT_VERSION = 5.0;
+				SWIFT_VERSION = 6.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
