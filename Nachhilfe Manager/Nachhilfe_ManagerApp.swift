@@ -10,7 +10,7 @@ import SwiftUI
 
 @main
 struct Nachhilfe_ManagerApp: App {
-    @State private var viewModel = AppViewModel()
+    @State private var viewModel = AppViewModel(with: .production)
     
     var body: some Scene {
         WindowGroup {
@@ -18,5 +18,6 @@ struct Nachhilfe_ManagerApp: App {
         }
         .environment(viewModel)
         .modelContainer(viewModel.modelContainer)
+        .environment(\.appState, viewModel.appState)
     }
 }
