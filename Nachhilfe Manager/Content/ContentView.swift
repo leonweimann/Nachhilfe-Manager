@@ -5,18 +5,36 @@
 //  Created by Leon Weimann on 08.09.24.
 //
 
-import SwiftData
 import SwiftUI
 
 struct ContentView: View {
     var body: some View {
-        VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundStyle(.tint)
-            Text("Hello, world!")
+        TabView {
+            Tab {
+                HomeScreen()
+            } label: {
+                Label("Home", systemImage: "house")
+            }
+            
+            Tab {
+                CustomersScreen()
+            } label: {
+                Label("Customers", systemImage: "person.2")
+            }
+            
+            Tab {
+                FinancialsScreen()
+            } label: {
+                Label("Financials", systemImage: "chart.bar.xaxis")
+            }
+            
+            Tab {
+                ScheduleScreen()
+            } label: {
+                Label("Schedule", systemImage: "calendar.badge.clock")
+            }
         }
-        .padding()
+        .tabViewStyle(.sidebarAdaptable)
     }
 }
 
