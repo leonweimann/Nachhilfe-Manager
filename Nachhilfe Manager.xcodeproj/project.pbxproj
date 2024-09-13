@@ -10,6 +10,7 @@
 		AB3D8AB12C94DEFF00C55CAF /* SampleDataPreviewModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB3D8AB02C94DEFF00C55CAF /* SampleDataPreviewModifier.swift */; };
 		AB3D8AB32C94EE7500C55CAF /* ModelConfiguration+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB3D8AB22C94EE7500C55CAF /* ModelConfiguration+Extension.swift */; };
 		AB3D8AB72C94F32100C55CAF /* DependencyRelatedContent.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB3D8AB62C94F32100C55CAF /* DependencyRelatedContent.swift */; };
+		AB3D8AC22C94F8EE00C55CAF /* SettingsScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB3D8AC12C94F8EE00C55CAF /* SettingsScreen.swift */; };
 		AB6A54502C8DE9B900B8E001 /* Nachhilfe_ManagerApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB6A544F2C8DE9B900B8E001 /* Nachhilfe_ManagerApp.swift */; };
 		AB6A54522C8DE9B900B8E001 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB6A54512C8DE9B900B8E001 /* ContentView.swift */; };
 		AB6A54542C8DE9BB00B8E001 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AB6A54532C8DE9BB00B8E001 /* Assets.xcassets */; };
@@ -23,6 +24,7 @@
 		AB3D8AB02C94DEFF00C55CAF /* SampleDataPreviewModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SampleDataPreviewModifier.swift; sourceTree = "<group>"; };
 		AB3D8AB22C94EE7500C55CAF /* ModelConfiguration+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ModelConfiguration+Extension.swift"; sourceTree = "<group>"; };
 		AB3D8AB62C94F32100C55CAF /* DependencyRelatedContent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DependencyRelatedContent.swift; sourceTree = "<group>"; };
+		AB3D8AC12C94F8EE00C55CAF /* SettingsScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsScreen.swift; sourceTree = "<group>"; };
 		AB6A544C2C8DE9B900B8E001 /* Nachhilfe Manager.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Nachhilfe Manager.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		AB6A544F2C8DE9B900B8E001 /* Nachhilfe_ManagerApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Nachhilfe_ManagerApp.swift; sourceTree = "<group>"; };
 		AB6A54512C8DE9B900B8E001 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -97,6 +99,7 @@
 			children = (
 				AB6A54512C8DE9B900B8E001 /* ContentView.swift */,
 				AB3D8AC02C94F62E00C55CAF /* Tabs */,
+				AB3D8AC12C94F8EE00C55CAF /* SettingsScreen.swift */,
 			);
 			path = Content;
 			sourceTree = "<group>";
@@ -208,6 +211,7 @@
 				AB8AEF332C8DF65D008735EE /* AppState.swift in Sources */,
 				AB3D8AB72C94F32100C55CAF /* DependencyRelatedContent.swift in Sources */,
 				AB3D8AB12C94DEFF00C55CAF /* SampleDataPreviewModifier.swift in Sources */,
+				AB3D8AC22C94F8EE00C55CAF /* SettingsScreen.swift in Sources */,
 				AB3D8AB32C94EE7500C55CAF /* ModelConfiguration+Extension.swift in Sources */,
 				AB8AEF2C2C8DF328008735EE /* CalManager.swift in Sources */,
 			);
