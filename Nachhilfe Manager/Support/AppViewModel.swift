@@ -11,20 +11,11 @@ import SwiftUI
 
 @MainActor @Observable
 final class AppViewModel {
-    init(with appState: AppState = .mocked) {
-        self.appState = appState
-    }
-    
-    var modelContainer: ModelContainer = {
-        do {
-            let config = ModelConfiguration(isStoredInMemoryOnly: false, allowsSave: true)
-            return try ModelContainer(for: Customer.self, configurations: config)
-        } catch {
-            fatalError("Failed creating ModelContainer with error: \(error.localizedDescription)")
-        }
-    }()
-    
-    var appState: AppState
+//    init(with appState: AppState = .mocked) {
+//        self.appState = appState
+//    }
+//    
+//    var appState: AppState
 
-    let cal = CalManager()
+//    let cal = CalManager()
 }

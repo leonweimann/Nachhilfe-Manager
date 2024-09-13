@@ -10,8 +10,7 @@ import SwiftUI
 
 struct SampleDataPreviewModifier: PreviewModifier {
     static func makeSharedContext() async throws -> ModelContainer {
-        let config = ModelConfiguration(isStoredInMemoryOnly: true, cloudKitDatabase: .none)
-        let container = try ModelContainer(for: Customer.self, configurations: config)
+        let container = try ModelContainer(for: Customer.self, configurations: .createConfig(with: .mocked))
         Customer.makeSampleData(in: container)
         return container
     }
