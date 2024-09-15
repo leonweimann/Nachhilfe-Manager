@@ -7,8 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		AB3D8AB12C94DEFF00C55CAF /* SampleDataPreviewModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB3D8AB02C94DEFF00C55CAF /* SampleDataPreviewModifier.swift */; };
-		AB3D8AB32C94EE7500C55CAF /* ModelConfiguration+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB3D8AB22C94EE7500C55CAF /* ModelConfiguration+Extension.swift */; };
+		AB3D8AB12C94DEFF00C55CAF /* PreviewHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB3D8AB02C94DEFF00C55CAF /* PreviewHelpers.swift */; };
 		AB3D8AB72C94F32100C55CAF /* DependencyRelatedContent.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB3D8AB62C94F32100C55CAF /* DependencyRelatedContent.swift */; };
 		AB3D8AC22C94F8EE00C55CAF /* SettingsScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB3D8AC12C94F8EE00C55CAF /* SettingsScreen.swift */; };
 		AB6A54502C8DE9B900B8E001 /* Nachhilfe_ManagerApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB6A544F2C8DE9B900B8E001 /* Nachhilfe_ManagerApp.swift */; };
@@ -16,13 +15,14 @@
 		AB6A54542C8DE9BB00B8E001 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AB6A54532C8DE9BB00B8E001 /* Assets.xcassets */; };
 		AB6A54582C8DE9BB00B8E001 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AB6A54572C8DE9BB00B8E001 /* Preview Assets.xcassets */; };
 		AB8AEF2C2C8DF328008735EE /* CalManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB8AEF2B2C8DF328008735EE /* CalManager.swift */; };
-		AB8AEF2E2C8DF3CA008735EE /* AppViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB8AEF2D2C8DF3CA008735EE /* AppViewModel.swift */; };
 		AB8AEF332C8DF65D008735EE /* AppState.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB8AEF322C8DF65D008735EE /* AppState.swift */; };
+		ABBCDF222CA556C2005ABFCB /* AppViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABBCDF212CA556C2005ABFCB /* AppViewModel.swift */; };
+		ABCDB2012C9767B1007ABFAD /* DataStoreClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABCDB2002C9767B1007ABFAD /* DataStoreClient.swift */; };
+		ABCDB2042C9771AD007ABFAD /* BusinessScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABCDB2032C9771AD007ABFAD /* BusinessScreen.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		AB3D8AB02C94DEFF00C55CAF /* SampleDataPreviewModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SampleDataPreviewModifier.swift; sourceTree = "<group>"; };
-		AB3D8AB22C94EE7500C55CAF /* ModelConfiguration+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ModelConfiguration+Extension.swift"; sourceTree = "<group>"; };
+		AB3D8AB02C94DEFF00C55CAF /* PreviewHelpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreviewHelpers.swift; sourceTree = "<group>"; };
 		AB3D8AB62C94F32100C55CAF /* DependencyRelatedContent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DependencyRelatedContent.swift; sourceTree = "<group>"; };
 		AB3D8AC12C94F8EE00C55CAF /* SettingsScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsScreen.swift; sourceTree = "<group>"; };
 		AB6A544C2C8DE9B900B8E001 /* Nachhilfe Manager.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Nachhilfe Manager.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -33,13 +33,16 @@
 		AB6A54572C8DE9BB00B8E001 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		AB6A545E2C8DEAC600B8E001 /* Nachhilfe-Manager-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "Nachhilfe-Manager-Info.plist"; sourceTree = SOURCE_ROOT; };
 		AB8AEF2B2C8DF328008735EE /* CalManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalManager.swift; sourceTree = "<group>"; };
-		AB8AEF2D2C8DF3CA008735EE /* AppViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppViewModel.swift; sourceTree = "<group>"; };
 		AB8AEF322C8DF65D008735EE /* AppState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppState.swift; sourceTree = "<group>"; };
+		ABBCDF212CA556C2005ABFCB /* AppViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppViewModel.swift; sourceTree = "<group>"; };
+		ABCDB2002C9767B1007ABFAD /* DataStoreClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataStoreClient.swift; sourceTree = "<group>"; };
+		ABCDB2032C9771AD007ABFAD /* BusinessScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BusinessScreen.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
 		AB3D8AAB2C94DBA500C55CAF /* Models */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = Models; sourceTree = "<group>"; };
 		AB3D8AC02C94F62E00C55CAF /* Tabs */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = Tabs; sourceTree = "<group>"; };
+		ABCDB2022C9770C9007ABFAD /* Components */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = Components; sourceTree = "<group>"; };
 /* End PBXFileSystemSynchronizedRootGroup section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -98,8 +101,10 @@
 			isa = PBXGroup;
 			children = (
 				AB6A54512C8DE9B900B8E001 /* ContentView.swift */,
-				AB3D8AC02C94F62E00C55CAF /* Tabs */,
+				ABCDB2032C9771AD007ABFAD /* BusinessScreen.swift */,
 				AB3D8AC12C94F8EE00C55CAF /* SettingsScreen.swift */,
+				AB3D8AC02C94F62E00C55CAF /* Tabs */,
+				ABCDB2022C9770C9007ABFAD /* Components */,
 			);
 			path = Content;
 			sourceTree = "<group>";
@@ -107,8 +112,8 @@
 		AB8AEF292C8DF2E2008735EE /* Support */ = {
 			isa = PBXGroup;
 			children = (
-				AB8AEF2D2C8DF3CA008735EE /* AppViewModel.swift */,
-				AB3D8AB02C94DEFF00C55CAF /* SampleDataPreviewModifier.swift */,
+				AB8AEF322C8DF65D008735EE /* AppState.swift */,
+				AB3D8AB02C94DEFF00C55CAF /* PreviewHelpers.swift */,
 			);
 			path = Support;
 			sourceTree = "<group>";
@@ -117,6 +122,7 @@
 			isa = PBXGroup;
 			children = (
 				AB8AEF2B2C8DF328008735EE /* CalManager.swift */,
+				ABCDB2002C9767B1007ABFAD /* DataStoreClient.swift */,
 			);
 			path = Manager;
 			sourceTree = "<group>";
@@ -124,9 +130,8 @@
 		AB8AEF312C8DF651008735EE /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
-				AB8AEF322C8DF65D008735EE /* AppState.swift */,
-				AB3D8AB22C94EE7500C55CAF /* ModelConfiguration+Extension.swift */,
 				AB3D8AB62C94F32100C55CAF /* DependencyRelatedContent.swift */,
+				ABBCDF212CA556C2005ABFCB /* AppViewModel.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -149,6 +154,7 @@
 			fileSystemSynchronizedGroups = (
 				AB3D8AAB2C94DBA500C55CAF /* Models */,
 				AB3D8AC02C94F62E00C55CAF /* Tabs */,
+				ABCDB2022C9770C9007ABFAD /* Components */,
 			);
 			name = "Nachhilfe Manager";
 			productName = "Nachhilfe Manager";
@@ -207,12 +213,13 @@
 			files = (
 				AB6A54522C8DE9B900B8E001 /* ContentView.swift in Sources */,
 				AB6A54502C8DE9B900B8E001 /* Nachhilfe_ManagerApp.swift in Sources */,
-				AB8AEF2E2C8DF3CA008735EE /* AppViewModel.swift in Sources */,
 				AB8AEF332C8DF65D008735EE /* AppState.swift in Sources */,
+				ABCDB2042C9771AD007ABFAD /* BusinessScreen.swift in Sources */,
 				AB3D8AB72C94F32100C55CAF /* DependencyRelatedContent.swift in Sources */,
-				AB3D8AB12C94DEFF00C55CAF /* SampleDataPreviewModifier.swift in Sources */,
+				AB3D8AB12C94DEFF00C55CAF /* PreviewHelpers.swift in Sources */,
+				ABBCDF222CA556C2005ABFCB /* AppViewModel.swift in Sources */,
+				ABCDB2012C9767B1007ABFAD /* DataStoreClient.swift in Sources */,
 				AB3D8AC22C94F8EE00C55CAF /* SettingsScreen.swift in Sources */,
-				AB3D8AB32C94EE7500C55CAF /* ModelConfiguration+Extension.swift in Sources */,
 				AB8AEF2C2C8DF328008735EE /* CalManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -33,21 +33,25 @@ struct HomeScreen: View {
                 }
             }
             .navigationTitle("Tutoring")
-            .toolbar {
-                Button {
-                    showSettingsSheet.toggle()
-                } label: {
-                    Label("Settings", systemImage: "gearshape")
-                }
-            }
+            .toolbar { toolbar }
         }
         .sheet(isPresented: $showSettingsSheet) {
             SettingsScreen()
         }
     }
+    
+    @ToolbarContentBuilder
+    private var toolbar: some ToolbarContent {
+        ToolbarItem(placement: .topBarTrailing) {
+            Button {
+                showSettingsSheet.toggle()
+            } label: {
+                Label("Settings", systemImage: "gearshape")
+            }
+        }
+    }
 }
 
 #Preview {
-//    HomeScreen()
-    ContentView()
+    HomeScreen()
 }

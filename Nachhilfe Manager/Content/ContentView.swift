@@ -5,39 +5,22 @@
 //  Created by Leon Weimann on 08.09.24.
 //
 
+import SwiftData
 import SwiftUI
 
 struct ContentView: View {
+    init(modelContext: ModelContext) {
+        self._viewModel = .init(initialValue: .init(modelContext: modelContext))
+    }
+    
+    @State private var viewModel: AppViewModel
+    
     var body: some View {
-        TabView {
-            Tab {
-                HomeScreen()
-            } label: {
-                Label("Home", systemImage: "house")
-            }
-            
-            Tab {
-                CustomersScreen()
-            } label: {
-                Label("Customers", systemImage: "person.2")
-            }
-            
-            Tab {
-                FinancialsScreen()
-            } label: {
-                Label("Financials", systemImage: "chart.bar.xaxis")
-            }
-            
-            Tab {
-                ScheduleScreen()
-            } label: {
-                Label("Schedule", systemImage: "calendar.badge.clock")
-            }
-        }
-        .tabViewStyle(.sidebarAdaptable)
+        Text("\(viewModel.businesses.count)")
     }
 }
 
-#Preview {
-    ContentView()
+#Preview(traits: .emptyData) {
+    @Previewable @Environment(\.modelContext) var modelContext
+    ContentView(modelContext: modelContext)
 }

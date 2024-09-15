@@ -33,18 +33,13 @@ class Customer {
         self.billingAddress = billingAddress
     }
     
-    static func makeSampleData(in container: ModelContainer) {
-        let sampleData = [
+    @MainActor
+    static func sample() -> [Customer] {
+        [
             Customer(name: "John Doe", schoolType: .elementary, eMail: "john.doe@example.com", phoneNumber: "1234567890", schoolName: "Greenwood Elementary", billingAddress: "123 Main St, City A"),
             Customer(name: "Jane Smith", schoolType: .secondaryAdvanced, eMail: "jane.smith@example.com", phoneNumber: "0987654321", schoolName: "Highlands Secondary", billingAddress: "456 Elm St, City B"),
             Customer(name: "Alice Johnson", schoolType: .university, eMail: "alice.johnson@example.com", phoneNumber: "1122334455", schoolName: "Tech University", billingAddress: "789 Oak St, City C")
         ]
-        
-        MainActor.assumeIsolated {
-            sampleData.forEach { customer in
-                container.mainContext.insert(customer)
-            }
-        }
     }
 }
 
