@@ -10,8 +10,6 @@ import SwiftUI
 struct BusinessAddingScreen: View {
     @Environment(\.dismiss) private var dismiss
     
-    @State private var business = Business.emptyInstance()
-    
     var body: some View {
         NavigationStack {
             Form {
@@ -35,7 +33,6 @@ struct BusinessAddingScreen: View {
             .navigationTitle("Add a business")
             .toolbar { toolbar }
         }
-        .interactiveDismissDisabled()
     }
     
     // MARK: -
@@ -43,7 +40,9 @@ struct BusinessAddingScreen: View {
     @ToolbarContentBuilder
     private var toolbar: some ToolbarContent {
         ToolbarItem(placement: .topBarLeading) {
-            ConfirmationRequiredButton(action: dismiss.callAsFunction, title: "Cancel", message: "Cancel business creation") {
+            Button {
+                dismiss()
+            } label: {
                 Label("Cancel", systemImage: "xmark")
                     .labelStyle(.titleOnly)
             }
@@ -57,11 +56,8 @@ struct BusinessAddingScreen: View {
             } label: {
                 ContentUnavailableView(title, systemImage: symbol)
                     .padding(.vertical)
+                    .foregroundStyle(.tint)
             }
-            .listRowBackground(
-                Rectangle()
-                    .fill(Color.accentColor.quaternary)
-            )
         }
     }
 }
