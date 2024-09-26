@@ -16,7 +16,7 @@ final class AppViewModel {
     
     var modelContext: ModelContext
     
-    var businesses: [Business] { DataStoreClient.shared.fetch(for: Business.self) }
+    var businesses: [Business] { DataStoreClient.shared.fetch(for: Business.self, descriptor: .init(sortBy: [.init(\.name)])) }
     
     @ObservationIgnored @PersistenceSelection("currentBusiness")
     var currentBusiness: Business?

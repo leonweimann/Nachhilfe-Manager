@@ -17,7 +17,7 @@ class Business {
     var eMail: String = ""
     var phoneNumber: String = ""
     var address: String = ""
-    var owner: User = User()
+    var owner: User = User() // Save only User.ID and fetch data from CloudKit servers (maybe only locally in beginning) -> Bei mehreren Unternehmen lässt sich User nicht zuverlässig synchronisieren. Zudem beim Teilen von Unternehmen geht das auch nicht. Vllt. bei Expansion der App daran denken, dass bei GmbH etc. kein User model infrage kommt..‚
     
     var isFavorite: Bool = false
     

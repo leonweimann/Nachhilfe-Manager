@@ -5,6 +5,7 @@
 //  Created by Leon Weimann on 15.09.24.
 //
 
+import Foundation
 import SwiftData
 
 @MainActor
@@ -46,9 +47,8 @@ class DataStoreClient {
 
     // MARK: -
     
-    func fetch<Model>(for type: Model.Type) -> [Model] where Model: PersistentModel {
+    func fetch<Model>(for type: Model.Type, descriptor: FetchDescriptor<Model> = .init()) -> [Model] where Model: PersistentModel {
         do {
-            let descriptor = FetchDescriptor<Model>()
             return try modelContext.fetch(descriptor)
         } catch {
             fatalError("Failed fetching \(Model.self) with error: \(error.localizedDescription)")
