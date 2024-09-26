@@ -37,7 +37,7 @@ struct BusinessSelectionScreen: View {
                 }
             }
             .sheet(isPresented: $showCreation) {
-                BusinessCreationScreen()
+                BusinessAddingScreen()
             }
             .sheet(item: $customizationItem) {
                 customizationItem = nil
