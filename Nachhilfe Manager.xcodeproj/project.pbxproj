@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		AB051D3D2CA55FB500D2B78D /* BusinessSelectionScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB051D3C2CA55FB500D2B78D /* BusinessSelectionScreen.swift */; };
 		AB051D3F2CA56EA000D2B78D /* PersistenceSelectionPropertyWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB051D3E2CA56EA000D2B78D /* PersistenceSelectionPropertyWrapper.swift */; };
 		AB3D8AB12C94DEFF00C55CAF /* PreviewHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB3D8AB02C94DEFF00C55CAF /* PreviewHelpers.swift */; };
 		AB3D8AB72C94F32100C55CAF /* DependencyRelatedContent.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB3D8AB62C94F32100C55CAF /* DependencyRelatedContent.swift */; };
@@ -16,15 +15,13 @@
 		AB6A54522C8DE9B900B8E001 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB6A54512C8DE9B900B8E001 /* ContentView.swift */; };
 		AB6A54542C8DE9BB00B8E001 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AB6A54532C8DE9BB00B8E001 /* Assets.xcassets */; };
 		AB6A54582C8DE9BB00B8E001 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AB6A54572C8DE9BB00B8E001 /* Preview Assets.xcassets */; };
+		AB6B71572CA5955B0041CEB6 /* ConfirmationRequiredButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB6B71562CA5955B0041CEB6 /* ConfirmationRequiredButton.swift */; };
 		AB8AEF2C2C8DF328008735EE /* CalManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB8AEF2B2C8DF328008735EE /* CalManager.swift */; };
 		AB8AEF332C8DF65D008735EE /* AppState.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB8AEF322C8DF65D008735EE /* AppState.swift */; };
-		ABBCDF222CA556C2005ABFCB /* AppViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABBCDF212CA556C2005ABFCB /* AppViewModel.swift */; };
 		ABCDB2012C9767B1007ABFAD /* DataStoreClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABCDB2002C9767B1007ABFAD /* DataStoreClient.swift */; };
-		ABCDB2042C9771AD007ABFAD /* BusinessScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABCDB2032C9771AD007ABFAD /* BusinessScreen.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		AB051D3C2CA55FB500D2B78D /* BusinessSelectionScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BusinessSelectionScreen.swift; sourceTree = "<group>"; };
 		AB051D3E2CA56EA000D2B78D /* PersistenceSelectionPropertyWrapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistenceSelectionPropertyWrapper.swift; sourceTree = "<group>"; };
 		AB3D8AB02C94DEFF00C55CAF /* PreviewHelpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreviewHelpers.swift; sourceTree = "<group>"; };
 		AB3D8AB62C94F32100C55CAF /* DependencyRelatedContent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DependencyRelatedContent.swift; sourceTree = "<group>"; };
@@ -36,16 +33,17 @@
 		AB6A54552C8DE9BB00B8E001 /* Nachhilfe_Manager.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Nachhilfe_Manager.entitlements; sourceTree = "<group>"; };
 		AB6A54572C8DE9BB00B8E001 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		AB6A545E2C8DEAC600B8E001 /* Nachhilfe-Manager-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "Nachhilfe-Manager-Info.plist"; sourceTree = SOURCE_ROOT; };
+		AB6B71562CA5955B0041CEB6 /* ConfirmationRequiredButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfirmationRequiredButton.swift; sourceTree = "<group>"; };
 		AB8AEF2B2C8DF328008735EE /* CalManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalManager.swift; sourceTree = "<group>"; };
 		AB8AEF322C8DF65D008735EE /* AppState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppState.swift; sourceTree = "<group>"; };
-		ABBCDF212CA556C2005ABFCB /* AppViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppViewModel.swift; sourceTree = "<group>"; };
 		ABCDB2002C9767B1007ABFAD /* DataStoreClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataStoreClient.swift; sourceTree = "<group>"; };
-		ABCDB2032C9771AD007ABFAD /* BusinessScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BusinessScreen.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
 		AB3D8AAB2C94DBA500C55CAF /* Models */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = Models; sourceTree = "<group>"; };
 		AB3D8AC02C94F62E00C55CAF /* Tabs */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = Tabs; sourceTree = "<group>"; };
+		AB6B71542CA58FDA0041CEB6 /* Business */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = Business; sourceTree = "<group>"; };
+		AB6B71552CA592AC0041CEB6 /* ViewModels */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = ViewModels; sourceTree = "<group>"; };
 		ABCDB2022C9770C9007ABFAD /* Components */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = Components; sourceTree = "<group>"; };
 /* End PBXFileSystemSynchronizedRootGroup section */
 
@@ -84,6 +82,7 @@
 				AB8AEF282C8DF2DF008735EE /* Content */,
 				AB8AEF292C8DF2E2008735EE /* Support */,
 				AB8AEF312C8DF651008735EE /* Helpers */,
+				AB6B71552CA592AC0041CEB6 /* ViewModels */,
 				AB8AEF2A2C8DF2E7008735EE /* Manager */,
 				AB3D8AAB2C94DBA500C55CAF /* Models */,
 				AB6A54532C8DE9BB00B8E001 /* Assets.xcassets */,
@@ -105,11 +104,10 @@
 			isa = PBXGroup;
 			children = (
 				AB6A54512C8DE9B900B8E001 /* ContentView.swift */,
-				ABCDB2032C9771AD007ABFAD /* BusinessScreen.swift */,
 				AB3D8AC12C94F8EE00C55CAF /* SettingsScreen.swift */,
+				AB6B71542CA58FDA0041CEB6 /* Business */,
 				AB3D8AC02C94F62E00C55CAF /* Tabs */,
 				ABCDB2022C9770C9007ABFAD /* Components */,
-				AB051D3C2CA55FB500D2B78D /* BusinessSelectionScreen.swift */,
 			);
 			path = Content;
 			sourceTree = "<group>";
@@ -135,9 +133,9 @@
 		AB8AEF312C8DF651008735EE /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
-				ABBCDF212CA556C2005ABFCB /* AppViewModel.swift */,
 				AB3D8AB62C94F32100C55CAF /* DependencyRelatedContent.swift */,
 				AB051D3E2CA56EA000D2B78D /* PersistenceSelectionPropertyWrapper.swift */,
+				AB6B71562CA5955B0041CEB6 /* ConfirmationRequiredButton.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -160,6 +158,8 @@
 			fileSystemSynchronizedGroups = (
 				AB3D8AAB2C94DBA500C55CAF /* Models */,
 				AB3D8AC02C94F62E00C55CAF /* Tabs */,
+				AB6B71542CA58FDA0041CEB6 /* Business */,
+				AB6B71552CA592AC0041CEB6 /* ViewModels */,
 				ABCDB2022C9770C9007ABFAD /* Components */,
 			);
 			name = "Nachhilfe Manager";
@@ -220,14 +220,12 @@
 				AB6A54522C8DE9B900B8E001 /* ContentView.swift in Sources */,
 				AB6A54502C8DE9B900B8E001 /* Nachhilfe_ManagerApp.swift in Sources */,
 				AB8AEF332C8DF65D008735EE /* AppState.swift in Sources */,
-				ABCDB2042C9771AD007ABFAD /* BusinessScreen.swift in Sources */,
+				AB6B71572CA5955B0041CEB6 /* ConfirmationRequiredButton.swift in Sources */,
 				AB3D8AB72C94F32100C55CAF /* DependencyRelatedContent.swift in Sources */,
 				AB3D8AB12C94DEFF00C55CAF /* PreviewHelpers.swift in Sources */,
-				ABBCDF222CA556C2005ABFCB /* AppViewModel.swift in Sources */,
 				ABCDB2012C9767B1007ABFAD /* DataStoreClient.swift in Sources */,
 				AB3D8AC22C94F8EE00C55CAF /* SettingsScreen.swift in Sources */,
 				AB8AEF2C2C8DF328008735EE /* CalManager.swift in Sources */,
-				AB051D3D2CA55FB500D2B78D /* BusinessSelectionScreen.swift in Sources */,
 				AB051D3F2CA56EA000D2B78D /* PersistenceSelectionPropertyWrapper.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
