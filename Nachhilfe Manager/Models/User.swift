@@ -7,12 +7,24 @@
 
 import SwiftUI
 
-struct User: View {
-    var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+struct User: Codable, Identifiable {
+    var id = UUID().uuidString
+    var firstName: String = ""
+    var lastName: String = ""
+    var eMail: String = ""
+    var phoneNumber: String = ""
+    var address: String = ""
+    
+    var name: String { firstName + " " + lastName }
+    
+    static func sample() -> User {
+        .init(
+            firstName: "Leon",
+            lastName: "Weimann",
+            eMail: "leonweimann@icloud.com",
+            phoneNumber: "0178 5368576",
+            address: "Friedhofstraße 11, 77963 Schwanau"
+        )
     }
 }
 
-#Preview {
-    User()
-}
