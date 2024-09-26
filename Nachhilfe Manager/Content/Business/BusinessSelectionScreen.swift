@@ -22,7 +22,15 @@ struct BusinessSelectionScreen: View {
                     emptyDataView
                 } else {
                     List {
-                        ForEach(viewModel.businesses) { business in
+                        if favorites.count > 0 {
+                            Section("Favorites") {
+                                ForEach(favorites) { business in
+                                    SelectableBusinessComponent(for: business)
+                                }
+                            }
+                        }
+                        
+                        ForEach(nonFavorites) { business in
                             SelectableBusinessComponent(for: business)
                         }
                     }
@@ -40,6 +48,18 @@ struct BusinessSelectionScreen: View {
             .navigationTitle("Tutoring Manager")
             .toolbar { toolbar }
         }
+    }
+    
+    // MARK: -
+    
+    private var favorites: [Business] {
+        viewModel.businesses
+            .filter { $0.isFavorite }
+    }
+    
+    private var nonFavorites: [Business] {
+        viewModel.businesses
+            .filter { !$0.isFavorite }
     }
     
     // MARK: -
@@ -116,7 +136,9 @@ struct BusinessSelectionScreen: View {
     
     private func FavoritiseButton(for business: Business) -> some View {
         Button {
-            business.isFavorite.toggle()
+            withAnimation(.smooth) {
+                business.isFavorite.toggle()
+            }
         } label: {
             Label("Favorite", systemImage: business.isFavorite ? "star.slash" : "star")
         }
