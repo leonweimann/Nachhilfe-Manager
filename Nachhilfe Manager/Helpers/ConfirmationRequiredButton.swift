@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct ConfirmationRequiredButton<C>: View where C: View {
+    var role: ButtonRole? = nil
     var action: () -> Void
     var title = "Confirm your action"
     var message = ""
@@ -16,7 +17,7 @@ struct ConfirmationRequiredButton<C>: View where C: View {
     @State private var show = false
     
     var body: some View {
-        Button {
+        Button(role: role) {
             show.toggle()
         } label: {
             label()
