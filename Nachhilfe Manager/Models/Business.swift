@@ -15,15 +15,18 @@ class Business {
     var address: String = "businessAddressPlaceholder"
     var owner: String = "businessOwnerPlaceholder"
     
+    var isFavorite: Bool = false
+    
     @Relationship(.unique, deleteRule: .cascade)
     var customers: [Customer] = []
     
-    init(name: String, eMail: String, phoneNumber: String, address: String, owner: String, customers: [Customer]) {
+    init(name: String, eMail: String, phoneNumber: String, address: String, owner: String, isFavorite: Bool, customers: [Customer]) {
         self.name = name
         self.eMail = eMail
         self.phoneNumber = phoneNumber
         self.address = address
         self.owner = owner
+        self.isFavorite = isFavorite
         self.customers = customers
     }
     
@@ -35,6 +38,7 @@ class Business {
             phoneNumber: "01785368576",
             address: "Friedhofstraße 11, 77963 Schwanau",
             owner: "Leon Weimann",
+            isFavorite: true,
             customers: Customer.sample()
         )
     }
@@ -47,6 +51,7 @@ class Business {
             phoneNumber: "",
             address: "",
             owner: "",
+            isFavorite: false,
             customers: []
         )
     }
