@@ -19,11 +19,23 @@ struct BusinessPreview: View {
                     .frame(width: 48, height: 48)
             }
             
-            VStack {
+            VStack(alignment: .leading) {
                 Text(business.name)
                     .font(.headline)
                 
+                if let slogan = business.slogan {
+                    Text(slogan)
+                        .font(.subheadline)
+                        .foregroundStyle(.secondary)
+                }
                 
+                HStack(spacing: 4) {
+                    Image(systemName: "person")
+                        .foregroundStyle(.tint)
+                    
+                    Text(business.customers.count, format: .number)
+                }
+                .font(.footnote)
             }
         }
     }

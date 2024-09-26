@@ -12,6 +12,7 @@ import SwiftUI
 class Business {
     @Attribute(.unique)
     var name: String = ""
+    var slogan: String? = nil
     
     var eMail: String = ""
     var phoneNumber: String = ""
@@ -43,8 +44,9 @@ class Business {
     
     // MARK: -
     
-    init(name: String, eMail: String, phoneNumber: String, address: String, owner: String, isFavorite: Bool, customers: [Customer], images: [ImageModel]) {
+    init(name: String, slogan: String?, eMail: String, phoneNumber: String, address: String, owner: String, isFavorite: Bool, customers: [Customer], images: [ImageModel]) {
         self.name = name
+        self.slogan = slogan
         self.eMail = eMail
         self.phoneNumber = phoneNumber
         self.address = address
@@ -58,6 +60,7 @@ class Business {
     static func sample() -> Business {
         .init(
             name: "Nachhilfe Leon Weimann",
+            slogan: "Deine Ziele - Unser Weg",
             eMail: "nachhilfe@leonweimann.de",
             phoneNumber: "07824 6190305",
             address: "Friedhofstraße 11, 77963 Schwanau",
@@ -72,6 +75,7 @@ class Business {
     static func emptyInstance() -> Business {
         .init(
             name: "",
+            slogan: nil,
             eMail: "",
             phoneNumber: "",
             address: "",
