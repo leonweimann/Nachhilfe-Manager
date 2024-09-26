@@ -6,21 +6,44 @@
 //
 
 import SwiftData
+import SwiftUI
 
 @Model
-class Business {    
-    var name: String = "businessNamePlaceholder"
-    var eMail: String = "businessEMailPlaceholder"
-    var phoneNumber: String = "businessPhoneNumberPlaceholder"
-    var address: String = "businessAddressPlaceholder"
-    var owner: String = "businessOwnerPlaceholder"
+class Business {
+    @Attribute(.unique)
+    var name: String = ""
+    
+    var eMail: String = ""
+    var phoneNumber: String = ""
+    var address: String = ""
+    var owner: String = ""
     
     var isFavorite: Bool = false
     
     @Relationship(.unique, deleteRule: .cascade)
     var customers: [Customer] = []
     
-    init(name: String, eMail: String, phoneNumber: String, address: String, owner: String, isFavorite: Bool, customers: [Customer]) {
+    @Relationship(.unique, deleteRule: .cascade)
+    var images: [ImageModel] = []
+    
+    // MARK: -
+    
+    func imageModel(for useCase: ImageModel.UseCase) -> ImageModel? {
+        images
+            .filter { image in
+                image.name.hasSuffix(useCase.namingSuffix)
+            }
+            .first
+    }
+    
+    func image(for useCase: ImageModel.UseCase) -> Image? {
+        guard let image = imageModel(for: useCase)?.image else { return nil }
+        return Image(uiImage: image)
+    }
+    
+    // MARK: -
+    
+    init(name: String, eMail: String, phoneNumber: String, address: String, owner: String, isFavorite: Bool, customers: [Customer], images: [ImageModel]) {
         self.name = name
         self.eMail = eMail
         self.phoneNumber = phoneNumber
@@ -28,6 +51,7 @@ class Business {
         self.owner = owner
         self.isFavorite = isFavorite
         self.customers = customers
+        self.images = images
     }
     
     @MainActor
@@ -35,11 +59,12 @@ class Business {
         .init(
             name: "Nachhilfe Leon Weimann",
             eMail: "nachhilfe@leonweimann.de",
-            phoneNumber: "01785368576",
+            phoneNumber: "07824 6190305",
             address: "Friedhofstraße 11, 77963 Schwanau",
             owner: "Leon Weimann",
             isFavorite: true,
-            customers: Customer.sample()
+            customers: Customer.sample(),
+            images: ImageModel.samples(for: "Nachhilfe Leon Weimann")
         )
     }
     
@@ -52,7 +77,8 @@ class Business {
             address: "",
             owner: "",
             isFavorite: false,
-            customers: []
+            customers: [],
+            images: []
         )
     }
 }

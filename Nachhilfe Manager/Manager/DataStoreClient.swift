@@ -21,16 +21,13 @@ class DataStoreClient {
     static func makeModelContainer(with appState: AppState, empty: Bool = false) -> ModelContainer {
         do {
             let container = try ModelContainer(
-                for: Business.self, Customer.self,
+                for: Business.self, Customer.self, ImageModel.self,
                 configurations: createModelConfiguration(with: appState)
             )
             
             if appState == .mocked && !empty {
-                Customer.sample().forEach { sampleCustomer in
-                    container.mainContext.insert(sampleCustomer)
-                }
-                
                 container.mainContext.insert(Business.sample())
+                
             }
             
             shared = .init(modelContext: container.mainContext)

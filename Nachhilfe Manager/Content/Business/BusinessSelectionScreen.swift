@@ -22,7 +22,7 @@ struct BusinessSelectionScreen: View {
                 } else {
                     List {
                         ForEach(viewModel.businesses) { business in
-                            BusinessPreview(business: business)
+                            SelectableBusinessComponent(for: business)
                         }
                     }
                 }
@@ -34,6 +34,8 @@ struct BusinessSelectionScreen: View {
             }
         }
     }
+    
+    // MARK: -
     
     @ToolbarContentBuilder
     private var toolbar: some ToolbarContent {
@@ -59,10 +61,49 @@ struct BusinessSelectionScreen: View {
             Label("Create Business", systemImage: "plus")
         }
     }
+    
+    private func SelectableBusinessComponent(for business: Business) -> some View {
+        Button {
+            
+        } label: {
+            BusinessPreview(business: business)
+        }
+        .tint(.primary)
+        .swipeActions(edge: .trailing, allowsFullSwipe: false) {
+            DeleteButton(for: business)
+        }
+        .contextMenu {
+            FavoritiseButton(for: business)
+            Section {
+                DeleteButton(for: business)
+            }
+        }
+    }
+    
+    private func DeleteButton(for business: Business) -> some View {
+        ConfirmationRequiredButton(
+            role: .destructive,
+            action: { viewModel.modelContext.delete(business) },
+            title: "Delete Business",
+            message: "Are you sure?"
+        ) {
+            Label("Delete", systemImage: "trash")
+        }
+        .tint(.red)
+    }
+    
+    private func FavoritiseButton(for business: Business) -> some View {
+        Button {
+            business.isFavorite.toggle()
+        } label: {
+            Label("Favorite", systemImage: business.isFavorite ? "star.fill" : "star")
+        }
+        .tint(.yellow)
+    }
 }
 
-#Preview(traits: .emptyData) {
+#Preview(traits: .sampleData) {
     @Previewable @State var viewModel = AppViewModel(modelContext: DataStoreClient.shared.modelContext)
-    BusinessSelectionScreen(selection: .constant(.sample()))
+    BusinessSelectionScreen(selection: $viewModel.currentBusiness)
         .environment(viewModel)
 }
