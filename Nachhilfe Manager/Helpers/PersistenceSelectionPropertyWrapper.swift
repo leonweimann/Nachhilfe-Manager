@@ -20,7 +20,7 @@ struct PersistenceSelection<Model>: DynamicProperty where Model: PersistentModel
             return DataStoreClient.shared.model(for: id)
         }
         nonmutating set {
-            UserDefaults.standard.set(newValue?.id, forKey: key)
+            id = newValue?.id
         }
     }
     
@@ -33,22 +33,26 @@ struct PersistenceSelection<Model>: DynamicProperty where Model: PersistentModel
     
     private let key: String
     
-    var id: Model.ID? {
+    private var id: Model.ID? {
         get {
-            guard let id = UserDefaults.standard.string(forKey: key) as? Model.ID else {
-                guard let firstModelID = DataStoreClient.shared.fetch(for: Model.self).first?.id as? String else {
-                    UserDefaults.standard.removeObject(forKey: key)
-                    return nil
-                }
-                
-                UserDefaults.standard.set(firstModelID, forKey: key)
-                return firstModelID as? Model.ID
+            if let storedID = UserDefaults.standard.string(forKey: key) as? Model.ID {
+                return storedID
             }
             
-            return id
+            guard let firstModelID = DataStoreClient.shared.fetch(for: Model.self).first?.id as? Model.ID else {
+                UserDefaults.standard.removeObject(forKey: key)
+                return nil
+            }
+            
+            UserDefaults.standard.set(firstModelID as? String, forKey: key)
+            return firstModelID
         }
         nonmutating set {
-            UserDefaults.standard.set(newValue as? String, forKey: key)
+            if let newID = newValue as? String {
+                UserDefaults.standard.set(newID, forKey: key)
+            } else {
+                UserDefaults.standard.removeObject(forKey: key)
+            }
         }
     }
 }
