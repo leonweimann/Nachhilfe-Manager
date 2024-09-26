@@ -8,8 +8,10 @@
 import SwiftUI
 
 struct BusinessCreationScreen: View {
+    @State private var business = Business.emptyInstance()
+    
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        ContentUnavailableView("Business Creation", systemImage: "plus")
     }
 }
 
