@@ -16,7 +16,11 @@ struct ContentView: View {
     @State private var viewModel: AppViewModel
     
     var body: some View {
-        Text("\(viewModel.businesses.count)")
+        if let currentBusiness = viewModel.currentBusiness {
+            BusinessScreen(business: currentBusiness)
+        } else {
+            BusinessSelectionScreen()
+        }
     }
 }
 

@@ -16,14 +16,8 @@ final class AppViewModel {
     
     var modelContext: ModelContext
     
-    var businesses: [Business] {
-        do {
-            let descriptor = FetchDescriptor<Business>(sortBy: [SortDescriptor(\.name)])
-            return try modelContext.fetch(descriptor)
-        } catch {
-            fatalError("Fetch failed")
-        }
-    }
+    var businesses: [Business] { DataStoreClient.shared.fetch(for: Business.self) }
     
+    @ObservationIgnored @PersistenceSelection("currentBusiness")
     var currentBusiness: Business?
 }

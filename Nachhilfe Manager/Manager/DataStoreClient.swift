@@ -9,7 +9,14 @@ import SwiftData
 
 @MainActor
 class DataStoreClient {
-    private init() { }
+    static var shared: DataStoreClient!
+    private init(modelContext: ModelContext) {
+        self.modelContext = modelContext
+    }
+    
+    var modelContext: ModelContext
+    
+    // MARK: -
     
     static func makeModelContainer(with appState: AppState, empty: Bool = false) -> ModelContainer {
         do {
@@ -26,6 +33,7 @@ class DataStoreClient {
                 container.mainContext.insert(Business.sample())
             }
             
+            shared = .init(modelContext: container.mainContext)
             return container
         } catch {
             fatalError("Failed creating ModelContainer with error: \(error.localizedDescription)")
@@ -37,5 +45,26 @@ class DataStoreClient {
             isStoredInMemoryOnly: appState == .mocked,
             cloudKitDatabase: appState == .mocked ? .none : .automatic
         )
+    }
+
+    // MARK: -
+    
+    func fetch<Model>(for type: Model.Type) -> [Model] where Model: PersistentModel {
+        do {
+            let descriptor = FetchDescriptor<Model>()
+            return try modelContext.fetch(descriptor)
+        } catch {
+            fatalError("Failed fetching \(Model.self) with error: \(error.localizedDescription)")
+        }
+    }
+    
+    func model<Model>(for id: Model.ID) -> Model where Model: PersistentModel {
+        guard
+            let identifier = id as? PersistentIdentifier,
+            let model = modelContext.model(for: identifier) as? Model
+        else {
+            fatalError("Failed fetching \(Model.self) with error")
+        }
+        return model
     }
 }
