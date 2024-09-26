@@ -28,7 +28,6 @@ class DataStoreClient {
             
             if appState == .mocked && !empty {
                 container.mainContext.insert(Business.sample())
-                
             }
             
             shared = .init(modelContext: container.mainContext)

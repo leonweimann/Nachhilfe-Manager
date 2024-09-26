@@ -12,7 +12,8 @@ struct BusinessSelectionScreen: View {
     
     @Environment(AppViewModel.self) private var viewModel
     
-    @State private var showBusinessCreation = false
+    @State private var showCreation = false
+    @State private var customizationItem: Business?
     
     var body: some View {
         NavigationStack {
@@ -27,11 +28,17 @@ struct BusinessSelectionScreen: View {
                     }
                 }
             }
-            .navigationTitle("Tutoring Manager")
-            .toolbar { toolbar }
-            .sheet(isPresented: $showBusinessCreation) {
+            .sheet(isPresented: $showCreation) {
                 BusinessCreationScreen()
             }
+            .sheet(item: $customizationItem) {
+                customizationItem = nil
+            } content: { business in
+                BusinessCustomizationScreen(business: business)
+            }
+            
+            .navigationTitle("Tutoring Manager")
+            .toolbar { toolbar }
         }
     }
     
@@ -56,7 +63,7 @@ struct BusinessSelectionScreen: View {
     
     private var createBusinessButton: some View {
         Button {
-            showBusinessCreation.toggle()
+            showCreation.toggle()
         } label: {
             Label("Create Business", systemImage: "plus")
         }
@@ -64,16 +71,22 @@ struct BusinessSelectionScreen: View {
     
     private func SelectableBusinessComponent(for business: Business) -> some View {
         Button {
-            
+            selection = business
         } label: {
             BusinessPreview(business: business)
         }
-        .tint(.primary)
+        .tint(selection?.id == business.id ? .primary : .secondary)
+        .swipeActions(edge: .leading, allowsFullSwipe: true) {
+            FavoritiseButton(for: business)
+        }
         .swipeActions(edge: .trailing, allowsFullSwipe: false) {
             DeleteButton(for: business)
+            CustomizeButton(for: business)
         }
         .contextMenu {
             FavoritiseButton(for: business)
+            CustomizeButton(for: business)
+            
             Section {
                 DeleteButton(for: business)
             }
@@ -92,11 +105,20 @@ struct BusinessSelectionScreen: View {
         .tint(.red)
     }
     
+    private func CustomizeButton(for business: Business) -> some View {
+        Button {
+            customizationItem = business
+        } label: {
+            Label("Customize", systemImage: "pencil")
+        }
+        .tint(.accentColor)
+    }
+    
     private func FavoritiseButton(for business: Business) -> some View {
         Button {
             business.isFavorite.toggle()
         } label: {
-            Label("Favorite", systemImage: business.isFavorite ? "star.fill" : "star")
+            Label("Favorite", systemImage: business.isFavorite ? "star.slash" : "star")
         }
         .tint(.yellow)
     }
