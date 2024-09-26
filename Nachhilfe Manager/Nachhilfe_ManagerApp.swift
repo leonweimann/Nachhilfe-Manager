@@ -10,7 +10,7 @@ import SwiftUI
 
 @main
 struct Nachhilfe_ManagerApp: App {
-    private let modelContainer: ModelContainer = DataStoreClient.makeModelContainer(with: .production)
+    let modelContainer = DataStoreClient.makeModelContainer(with: .production)
     
     var body: some Scene {
         WindowGroup {

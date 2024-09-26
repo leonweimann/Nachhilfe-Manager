@@ -16,15 +16,18 @@ struct ContentView: View {
     @State private var viewModel: AppViewModel
     
     var body: some View {
-        if let currentBusiness = viewModel.currentBusiness {
-            BusinessScreen(business: currentBusiness)
-        } else {
-            BusinessSelectionScreen()
+        Group {
+            if let currentBusiness = viewModel.currentBusiness {
+                BusinessScreen(business: currentBusiness)
+            } else {
+                BusinessSelectionScreen(selection: $viewModel.currentBusiness)
+            }
         }
+        .environment(viewModel)
     }
 }
 
-#Preview(traits: .emptyData) {
+#Preview(traits: .sampleData) {
     @Previewable @Environment(\.modelContext) var modelContext
     ContentView(modelContext: modelContext)
 }
