@@ -11,7 +11,7 @@ struct BusinessPreview: View {
     let business: Business
     
     var body: some View {
-        HStack {
+        HStack(spacing: 16) {
             if let image = business.image(for: .icon) {
                 image
                     .resizable()
@@ -22,26 +22,38 @@ struct BusinessPreview: View {
             VStack(alignment: .leading) {
                 Text(business.name)
                     .font(.headline)
+                    .lineLimit(2)
                 
-                if let slogan = business.slogan {
-                    Text(slogan)
-                        .font(.subheadline)
-                        .foregroundStyle(.secondary)
-                }
-                
-                HStack(spacing: 4) {
-                    Image(systemName: "person")
-                        .foregroundStyle(.tint)
+                HStack {
+                    if let slogan = business.slogan {
+                        Text(slogan)
+                            .font(.subheadline)
+                            .foregroundStyle(.secondary)
+                            .lineLimit(1)
+                    }
                     
-                    Text(business.customers.count, format: .number)
+                    Spacer()
+                    
+                    BusinessStatsIndicator(business.customers.count, symbol: "person.2")
                 }
                 .font(.footnote)
             }
         }
     }
+    
+    private func BusinessStatsIndicator(_ value: Int, symbol: String, color: Color = .accentColor) -> some View {
+        HStack(spacing: 2) {
+            Image(systemName: symbol)
+                .foregroundStyle(color)
+            
+            Text(value, format: .number)
+                .foregroundStyle(Color.secondary)
+        }
+        .font(.footnote)
+    }
 }
 
-#Preview(traits: .sampleData) {
+#Preview {
     List {
         BusinessPreview(business: .sample())
     }
