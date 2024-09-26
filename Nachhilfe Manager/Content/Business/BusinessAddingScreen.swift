@@ -18,7 +18,7 @@ struct BusinessAddingScreen: View {
                     symbol: "plus",
                     heading: "Create"
                 ) {
-                    
+                    BusinessCreationScreen()
                 }
                 
                 RoutingPathOptionView(
