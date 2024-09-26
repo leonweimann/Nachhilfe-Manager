@@ -18,6 +18,7 @@ struct BusinessPreview: View {
                 .frame(width: 48, height: 48)
                 .overlay(alignment: .topTrailing) {
                     businessFavoriteIndicator
+                        .animation(.smooth, value: business.isFavorite)
                 }
             
             VStack(alignment: .leading) {
